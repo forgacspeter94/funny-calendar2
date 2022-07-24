@@ -7,11 +7,23 @@ function dayComponent(year, month, day){
             </div>`
 }
 
+function monthComponent (month){
+  let monthHtml ='';
+  
+    for(let day = 1; day<= month.days; day++){
+    monthHtml += dayComponent(2022,month.name,day)
+  }
+  return monthHtml
+}
+
+
 function init(){
     const root = document.querySelector('#root')
-    const firstDay =dayComponent()
+    
+    const month = monthComponent(year[1])
 
-    root.insertAdjacentHTML("beforeend",firstDay)
+
+    root.insertAdjacentHTML("beforeend",month)
 
 }
 init()
